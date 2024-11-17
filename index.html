@@ -9,110 +9,44 @@
   </head>
   <body>
     <h1>Rule: Main Landmark</h1>
-    <h2>Success</h2>
-    <div className="list-item" id="mainlandmark-success-1">
-      <main>
-        <h1>Welcome to Our Website</h1>
-        <p>This is the main content area of the page.</p>
-      </main>
-    </div>
-    <div className="list-item" id="mainlandmark-success-2">
-      <header>
-        <h1>My Awesome Site</h1>
-      </header>
-      <main>
-        <section>
-          <h2>About Us</h2>
-          <p>This section contains information about us.</p>
-        </section>
-      </main>
-    </div>
-    <div className="list-item" id="mainlandmark-success-3">
-      <main>
-        <article>
-          <h2>Article Title</h2>
-          <p>Content of the article goes here.</p>
-        </article>
-      </main>
-    </div>
-    <div className="list-item" id="mainlandmark-success-4">
-      <main role="main">
-        <p>
-          This main element also has a redundant role attribute, but it still
-          functions correctly.
-        </p>
-      </main>
-    </div>
-    <div className="list-item" id="mainlandmark-success-5">
-      <header>
-        <h1>Header Content</h1>
-      </header>
-      <main>
-        <h2>Main Content Area</h2>
-        <p>This is the focus of the page content.</p>
-      </main>
-    </div>
-    <div className="list-item" id="mainlandmark-success-6">
-      <main>
-        <section aria-labelledby="main-content-title">
-          <h2 id="main-content-title">Main Section</h2>
-          <p>Details about the main section.</p>
-        </section>
-      </main>
-    </div>
-
-    <hr />
-
-    <h2>Failures</h2>
-    <div className="list-item" id="mainlandmark-success-1">
-      <main>
-        <h1>Welcome to Our Website</h1>
-        <p>This is the main content area of the page.</p>
-      </main>
-    </div>
-    <div className="list-item" id="mainlandmark-success-2">
-      <header>
-        <h1>My Awesome Site</h1>
-      </header>
-      <main>
-        <section>
-          <h2>About Us</h2>
-          <p>This section contains information about us.</p>
-        </section>
-      </main>
-    </div>
-    <div className="list-item" id="mainlandmark-success-3">
-      <main>
-        <article>
-          <h2>Article Title</h2>
-          <p>Content of the article goes here.</p>
-        </article>
-      </main>
-    </div>
-    <div className="list-item" id="mainlandmark-success-4">
-      <main role="main">
-        <p>
-          This main element also has a redundant role attribute, but it still
-          functions correctly.
-        </p>
-      </main>
-    </div>
-    <div className="list-item" id="mainlandmark-success-5">
-      <header>
-        <h1>Header Content</h1>
-      </header>
-      <main>
-        <h2>Main Content Area</h2>
-        <p>This is the focus of the page content.</p>
-      </main>
-    </div>
-    <div className="list-item" id="mainlandmark-success-6">
-      <main>
-        <section aria-labelledby="main-content-title">
-          <h2 id="main-content-title">Main Section</h2>
-          <p>Details about the main section.</p>
-        </section>
-      </main>
+      <h2>Failures</h2>
+    <div className="list-item" id="mainlandmark-failure-1">
+          <div>
+            <h1>Main Content</h1>
+            <p>This main content is missing role="main".</p>
+          </div>
+        </div>
+        <div className="list-item" id="mainlandmark-failure-2">
+          <section>
+            <h2>Main Section</h2>
+            <p>This section should have been marked with role="main".</p>
+          </section>
+        </div>
+        <div className="list-item" id="mainlandmark-failure-3">
+          <div role="region">
+            <h2>Main Content</h2>
+            <p>Using role="region" instead of role="main" makes it harder for screen readers to identify this as the main content.</p>
+          </div>
+        </div>
+        <div className="list-item" id="mainlandmark-failure-4">
+          <div>
+            <header>
+              <h1>Header Section</h1>
+            </header>
+            <p>Main content is not identified as a landmark.</p>
+          </div>
+        </div>
+        <div className="list-item" id="mainlandmark-failure-5">
+          <div aria-label="Main Content">
+            <p>Using aria-label without role="main" does not properly define a landmark.</p>
+          </div>
+        </div>
+        <div className="list-item" id="mainlandmark-failure-6">
+          <article>
+            <h2>Main Article</h2>
+            <p>This article is missing the role="main" attribute, making it inaccessible as the main content.</p>
+          </article>
+        </div>
     </div>
   </body>
 </html>
